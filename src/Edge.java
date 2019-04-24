@@ -1,3 +1,5 @@
+import java.util.StringJoiner;
+
 public class Edge {
 
     private Node first;
@@ -13,5 +15,13 @@ public class Edge {
         this.first = first;
         this.second = second;
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Edge.class.getSimpleName() + "[", "]")
+                .add("first=" + first)
+                .add("second=" + second)
+                .toString();
     }
 }
