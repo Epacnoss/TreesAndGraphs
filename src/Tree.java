@@ -5,6 +5,10 @@ public class Tree {
 
     private Node root = null;
 
+    public Tree(Node root) {
+        this.root = root;
+    }
+
     protected Node getRoot() {
         return root;
     }
@@ -31,7 +35,18 @@ public class Tree {
             lastNodes.clear();
 
             for (int i = 0; i < nodeArrayFam.length; i++) {
-                System.out.print(nodeArrayFam[i].toString());
+                System.out.print(nodeArrayFam[i] + " ");
+                
+                Node[] kiddies = nodeArrayFam[i].getChildren().toArray(new Node[0]);
+                if(kiddies == null)
+                {
+                    continue;
+                }
+
+                for (int j = 0; j < kiddies.length; j++) {
+                    lastNodes.add(kiddies[i]);
+                }
+                
             }
 
             System.out.println();

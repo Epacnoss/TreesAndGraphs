@@ -14,11 +14,18 @@ public class Node {
         children = new ArrayList<>();
     }
 
-    public Node(Node parent, String content)
+    public Node(Node parent, int childNo)
     {
         this.parent = parent;
-        this.content = content;
         children = new ArrayList<>();
+
+        if(parent != null)
+        {
+            this.content = parent.content + childNo;
+        }else
+        {
+            this.content = childNo + "";
+        }
     }
 
     protected void setParent (Node parent)
@@ -41,9 +48,13 @@ public class Node {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Node.class.getSimpleName() + "[", "]")
-                .add("content='" + content + "'")
-                .toString();
+        if(parent != null)
+        {
+            return parent + content;
+        }else
+        {
+            return content;
+        }
     }
 
     public int childCount ()
@@ -60,5 +71,9 @@ public class Node {
         }
 
         return cc;
+    }
+
+    public String getContent() {
+        return content;
     }
 }

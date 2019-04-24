@@ -1,5 +1,5 @@
 # TreesAndGraphsFuntech
 
-Funtech.com
+[Funtech.com](Funtech)
 
 A lesson on Trees and Graphs in Java
