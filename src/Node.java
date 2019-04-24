@@ -21,12 +21,12 @@ public class Node {
         children = new ArrayList<>();
     }
 
-    public void setParent (Node parent)
+    protected void setParent (Node parent)
     {
         this.parent = parent;
     }
 
-    public void addChild (Node child)
+    protected void addChild (Node child)
     {
         children.add(child);
     }
@@ -36,5 +36,13 @@ public class Node {
         return new StringJoiner(", ", Node.class.getSimpleName() + "[", "]")
                 .add("content='" + content + "'")
                 .toString();
+    }
+
+    protected Node getParent() {
+        return parent;
+    }
+
+    protected List<Node> getChildren() {
+        return children;
     }
 }
