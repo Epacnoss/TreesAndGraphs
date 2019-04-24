@@ -1,5 +1,3 @@
-import java.util.StringJoiner;
-
 public class Tree {
 
     private Node root = null;
@@ -17,4 +15,10 @@ public class Tree {
     {
 
     }
+
+    public void addChild (Node kiddie)
+    {
+
+    }
+
 }

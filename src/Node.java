@@ -31,6 +31,14 @@ public class Node {
         children.add(child);
     }
 
+    protected Node getParent() {
+        return parent;
+    }
+
+    protected List<Node> getChildren() {
+        return children;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", Node.class.getSimpleName() + "[", "]")
@@ -38,11 +46,19 @@ public class Node {
                 .toString();
     }
 
-    protected Node getParent() {
-        return parent;
-    }
+    public int childCount ()
+    {
+        if(children.size() == 1)
+            return 1;
+        if(children.size() == 0)
+            return 0;
 
-    protected List<Node> getChildren() {
-        return children;
+        int cc = children.size();
+
+        for (int i = 0; i < children.size(); i++) {
+            cc += children.get(i).childCount();
+        }
+
+        return cc;
     }
 }
