@@ -7,6 +7,7 @@ public class program {
     {
         List<Node> nodes = new ArrayList<>();
 
+        //region Nodes init
         String temp = "";
         for (int i = 0; i < 100; i++) {
             temp += i;
@@ -16,11 +17,11 @@ public class program {
                 nodes.add(new Node(nodes.get(i - 1), temp));
 
         }
-
         for (int i = 1; i < nodes.size() - 1; i++)
         {
             nodes.get(i).addChild(nodes.get(i - 1));
         }
+        //endregion
 
         for (int i = 0; i < nodes.size(); i++) {
             System.out.println(nodes.get(i));
