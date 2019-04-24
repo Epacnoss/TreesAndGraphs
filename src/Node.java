@@ -50,7 +50,7 @@ public class Node {
     {
         if(children.size() == 1)
             return 1;
-        if(children.size() == 0)
+        if(children.isEmpty())
             return 0;
 
         int cc = children.size();
