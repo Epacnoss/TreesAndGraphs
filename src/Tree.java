@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Tree {
 
     private Node root = null;
@@ -13,12 +16,27 @@ public class Tree {
 
     public void print ()
     {
+        if(this.isEmpty())
+        {
+            System.err.println("TREE IS EMPTY");
+            return;
+        }
 
-    }
+        List<Node> lastNodes = new ArrayList<>();
+        lastNodes.add(root);
 
-    public void addChild (Node kiddie)
-    {
+        while(!lastNodes.isEmpty())
+        {
+            Node[] nodeArrayFam = lastNodes.toArray(new Node[0]);
+            lastNodes.clear();
 
+            for (int i = 0; i < nodeArrayFam.length; i++) {
+                System.out.print(nodeArrayFam[i].toString());
+            }
+
+            System.out.println();
+
+        }
     }
 
 }
