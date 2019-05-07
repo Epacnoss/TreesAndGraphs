@@ -35,7 +35,7 @@ public class Tree {
             lastNodes.clear();
 
             for (int i = 0; i < nodeArrayFam.length; i++) {
-                System.out.print(nodeArrayFam[i] + " ");
+                System.out.print(nodeArrayFam[i].toString() + " ");
                 
                 Node[] kiddies = nodeArrayFam[i].getChildren().toArray(new Node[0]);
                 if(kiddies == null)

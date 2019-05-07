@@ -6,6 +6,7 @@ public class Node {
 
     private Node parent;
     private List<Node> children;
+    int childNo;
 
     private String content;
 
@@ -21,11 +22,20 @@ public class Node {
 
         if(parent != null)
         {
-            this.content = parent.content + childNo;
+            this.content = "{Content='" + childNo + "',parent='" + parent.childNo + "'}";
         }else
         {
-            this.content = childNo + "";
+            this.content = "{Content='" + childNo + "',parent=' I AM GROOOOOOOOT'}";
         }
+
+        this.childNo = childNo;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Node.class.getSimpleName() + "[", "]")
+                .add("content='" + content + "'")
+                .toString();
     }
 
     protected void setParent (Node parent)
@@ -44,17 +54,6 @@ public class Node {
 
     protected List<Node> getChildren() {
         return children;
-    }
-
-    @Override
-    public String toString() {
-        if(parent != null)
-        {
-            return parent + content;
-        }else
-        {
-            return content;
-        }
     }
 
     public int childCount ()
